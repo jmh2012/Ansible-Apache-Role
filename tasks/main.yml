@@ -17,6 +17,7 @@
     owner: root
     group: root
     mode: 644
+  notify: "restart httpd"
 
 - name: copy ssl.conf template
   template:
@@ -25,6 +26,7 @@
     owner: root
     group: root
     mode: 644
+  nofity: "restart httpd"
 
 - name: enable Apache and start if necessary
   service:
