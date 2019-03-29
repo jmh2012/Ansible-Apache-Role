@@ -20,7 +20,7 @@
 
 - name: copy ssl.conf template
   template:
-    src: etc/httpd/conf.d
+    src: etc/httpd/conf.d/ssl.conf
     dest: /etc/httpd/conf.d/ssl.conf
     owner: root
     group: root
