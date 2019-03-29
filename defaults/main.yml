@@ -4,11 +4,13 @@ httpd_version: "httpd-2.4.6-88.el7"
 modssl_version: "mod_ssl-2.4.6-88"
 
 # http config
-enabled_http: yes
+enabled_http: true
+http_port: 80
 http_document_root: /var/www
 
 # https config
-enable_https: yes
+enable_https: true
+https_port: 443
 https_document_root: /var/www
 https_ssl_certificate: /etc/pki/tls/certs/localhost.crt
 https_ssl_keyfile: /etc/pki/tls/private/localhost.key
