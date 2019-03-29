@@ -1,0 +1,33 @@
+---
+
+- name: install the latest version of Apache
+  yum:
+    name: {{ httpd_version }}
+    state: installed
+
+- name: install mod_ssl
+  yum:
+    name: {{ modssl_version }}
+    state: installed
+
+- name: copy httpd.conf template
+  template:
+    src: etc/httpd/httpd.conf
+    dest: /etc/httpd/httpd.conf
+    owner: root
+    group: root
+    mode: 644
+
+- name: copy ssl.conf template
+  template:
+    src: etc/httpd/conf.d
+    dest: /etc/httpd/conf.d/ssl.conf
+    owner: root
+    group: root
+    mode: 644
+
+- name: enable Apache and start if necessary
+  service:
+    name: httpd
+    state: started
+    enabled: true
