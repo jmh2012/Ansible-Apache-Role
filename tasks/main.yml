@@ -36,7 +36,7 @@
     owner: apache
     group: apache
     recurse: yes
-  when: enable_http == "true"
+  when: enable_http == true
 
 - name: ensure apache owns https directory root
   file:
@@ -44,7 +44,7 @@
     owner: apache
     group: apache
     recurse: yes
-  when: enable_https == "true"
+  when: enable_https == true
 
 - name: ensure apache owns http cgi-bin directory
   file:
@@ -52,7 +52,7 @@
     owner: apache
     group: apache
     recurse: yes
-  when: enable_http == "true"
+  when: enable_http == true
 
 - name: ensure apache owns https cgi-bin directory
   file:
@@ -60,7 +60,7 @@
     owner: apache
     group: apache
     recurse: yes
-  when: enable_https == "true" 
+  when: enable_https == true 
 
 - name: enable and start Apache
   service:
