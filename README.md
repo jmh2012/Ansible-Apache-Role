@@ -6,3 +6,4 @@ This role can be included in playbooks to install and configure httpd 2.4 on RHE
 - Make basic auth configurable.
 - Option to disable cgi-bin
 - Option to allow php indexes
+- Option to enable .htaccess for ssl document roots
