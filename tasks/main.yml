@@ -30,6 +30,34 @@
   notify: 
     - "restart httpd"
 
+- name: ensure apache owns http directory root
+  file:
+    dest: "{{ http_document_root }}"
+    owner: apache
+    group: apache
+    recurse: yes
+
+- name: ensure apache owns https directory root
+  file:
+    dest: "{{ https_document_root }}"
+    owner: apache
+    group: apache
+    recurse: yes
+
+- name: ensure apache owns http cgi-bin directory
+  file:
+    dest: "{{ http_cgi_dir }}"
+    owner: apache
+    group: apache
+    recurse: yes
+
+- name: ensure apache owns https cgi-bin directory
+  file:
+    dest: "{{ https_cgi_dir }}"
+    owner: apache
+    group: apache
+    recurse: yes
+ 
 - name: enable and start Apache
   service:
     name: httpd

@@ -132,7 +132,7 @@ DocumentRoot "{{ http_document_root }}"
 </Directory>
 
 # Further relax access to the default document root:
-<Directory "{{ http_document_root }}/html">
+<Directory "{{ http_document_root }}">
     #
     # Possible values for the Options directive are "None", "All",
     # or any combination of:
@@ -256,7 +256,7 @@ LogLevel warn
 # "/var/www/cgi-bin" should be changed to whatever your ScriptAliased
 # CGI directory exists, if you have that configured.
 #
-<Directory "{{ http_document_root }}/cgi-bin">
+<Directory "{{ http_cgi_dir }}">
     AllowOverride None
     Options None
     Require all granted

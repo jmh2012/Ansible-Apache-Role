@@ -60,7 +60,7 @@ SSLCryptoDevice builtin
 <VirtualHost _default_:{{ https_port }}>
 
 # General setup for the virtual host, inherited from global configuration
-DocumentRoot "{{ https_document_root }}/html"
+DocumentRoot "{{ https_document_root }}"
 ServerName www.example.com:{{ https_port }}
 
 # Use separate log files for the SSL virtual host; note that LogLevel
@@ -179,7 +179,7 @@ SSLCertificateKeyFile {{ https_ssl_keyfile }}
 <Files ~ "\.(cgi|shtml|phtml|php3?)$">
     SSLOptions +StdEnvVars
 </Files>
-<Directory "{{ https_document_root }}/cgi-bin">
+<Directory "{{ https_cgi_dir }}">
     SSLOptions +StdEnvVars
 </Directory>
 

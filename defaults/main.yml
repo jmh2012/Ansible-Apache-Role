@@ -6,12 +6,14 @@ modssl_version: mod_ssl-2.4.6
 # http config
 enable_http: true
 http_port: 80
-http_document_root: /var/www
+http_document_root: /var/www/html
+http_cgi_dir: /var/www/cgi-bin
 
 # https config
 enable_https: true
 https_port: 443
-https_document_root: /var/www
+https_document_root: /var/www/html
+https_cgi_dir: /var/www/cgi-bin
 https_ssl_certificate: /etc/pki/tls/certs/localhost.crt
 https_ssl_keyfile: /etc/pki/tls/private/localhost.key
 https_ssl_cabundle: /etc/pki/tls/certs/ca-bundle.crt
