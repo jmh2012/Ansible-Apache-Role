@@ -1,10 +1,10 @@
 ---
 
-httpd_version: "httpd-2.4.6-88.el7"
-modssl_version: "mod_ssl-2.4.6-88"
+httpd_version: httpd-2.4.6
+modssl_version: mod_ssl-2.4.6
 
 # http config
-enabled_http: true
+enable_http: true
 http_port: 80
 http_document_root: /var/www
 

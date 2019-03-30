@@ -2,7 +2,7 @@
 # When we also provide SSL we have to listen to the 
 # the HTTPS port in addition.
 #
-{% https_enabled is sameas true %}
+{%if enable_https is sameas true %}
 Listen {{ https_port }} https
 {% else %}
 #Listen {{ https_port }} https
@@ -57,11 +57,11 @@ SSLCryptoDevice builtin
 ## SSL Virtual Host Context
 ##
 
-<VirtualHost _default_:443>
+<VirtualHost _default_:{{ https_port }}>
 
 # General setup for the virtual host, inherited from global configuration
 DocumentRoot "{{ https_document_root }}/html"
-ServerName www.example.com:443
+ServerName www.example.com:{{ https_port }}
 
 # Use separate log files for the SSL virtual host; note that LogLevel
 # is not inherited from httpd.conf.

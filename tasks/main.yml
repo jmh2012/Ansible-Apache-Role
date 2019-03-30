@@ -2,33 +2,35 @@
 
 - name: install the latest version of Apache
   yum:
-    name: {{ httpd_version }}
+    name: "{{ httpd_version }}"
     state: installed
 
 - name: install mod_ssl
   yum:
-    name: {{ modssl_version }}
+    name: "{{ modssl_version }}"
     state: installed
 
 - name: copy httpd.conf template
   template:
-    src: etc/httpd/httpd.conf
-    dest: /etc/httpd/httpd.conf
+    src: etc/httpd/conf/httpd.conf.j2
+    dest: /etc/httpd/conf/httpd.conf
     owner: root
     group: root
     mode: 644
-  notify: "restart httpd"
+  notify: 
+    - "restart httpd"
 
 - name: copy ssl.conf template
   template:
-    src: etc/httpd/conf.d/ssl.conf
+    src: etc/httpd/conf.d/ssl.conf.j2
     dest: /etc/httpd/conf.d/ssl.conf
     owner: root
     group: root
     mode: 644
-  nofity: "restart httpd"
+  notify: 
+    - "restart httpd"
 
-- name: enable Apache and start if necessary
+- name: enable and start Apache
   service:
     name: httpd
     state: started
