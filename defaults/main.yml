@@ -8,6 +8,7 @@ enable_http: true
 http_port: 80
 http_document_root: /var/www/html
 http_cgi_dir: /var/www/cgi-bin
+http_allow_htaccess: false
 
 # https config
 enable_https: true
