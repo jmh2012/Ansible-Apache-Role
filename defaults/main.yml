@@ -3,6 +3,9 @@
 httpd_version: httpd-2.4.6
 modssl_version: mod_ssl-2.4.6
 
+httpd-service-user: apache
+httpd-service-group: apache
+
 # http config
 enable_http: true
 http_port: 80
