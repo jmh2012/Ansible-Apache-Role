@@ -65,9 +65,9 @@ ServerName www.example.com:{{ https_port }}
 
 # Use separate log files for the SSL virtual host; note that LogLevel
 # is not inherited from httpd.conf.
-ErrorLog logs/ssl_error_log
-TransferLog logs/ssl_access_log
-LogLevel warn
+ErrorLog {{ https_error_log }}
+TransferLog {{ https_access_log }}
+LogLevel {{ https_log_level }}
 
 #   SSL Engine Switch:
 #   Enable/Disable SSL for this virtual host.

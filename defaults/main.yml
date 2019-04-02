@@ -3,8 +3,8 @@
 httpd_version: httpd-2.4.6
 modssl_version: mod_ssl-2.4.6
 
-httpd-service-user: apache
-httpd-service-group: apache
+httpd_service_user: apache
+httpd_service_group: apache
 
 # http config
 enable_http: true
@@ -12,6 +12,9 @@ http_port: 80
 http_document_root: /var/www/html
 http_cgi_dir: /var/www/cgi-bin
 http_allow_htaccess: false
+http_error_log: logs/error_log
+http_access_log: logs/access_log
+http_log_level: warn
 
 # https config
 enable_https: true
@@ -21,3 +24,6 @@ https_cgi_dir: /var/www/cgi-bin
 https_ssl_certificate: /etc/pki/tls/certs/localhost.crt
 https_ssl_keyfile: /etc/pki/tls/private/localhost.key
 https_ssl_cabundle: /etc/pki/tls/certs/ca-bundle.crt
+https_error_log: logs/ssl_error_log
+https_access_log: logs/ssl_access_log
+https_log_level: warn
